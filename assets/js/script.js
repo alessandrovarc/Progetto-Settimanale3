@@ -387,6 +387,10 @@ console.log('Es16',sumAllTheYears(0));
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+const searchByTitle = (array,str) => {
+    return array.find((elem) => elem.Title === str) //?
+}
+console.log('Es17', searchByTitle(movies,'Avengers'));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -396,6 +400,7 @@ console.log('Es16',sumAllTheYears(0));
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -411,11 +416,23 @@ console.log('Es20',myFunction());
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+const myFunction2= () => {
+    const everyTag = document.querySelectorAll('td');
+    return everyTag
+}
+console.log('Es21', myFunction2());
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
-*/
-
+*/ 
+const textTable = () => {
+    let paragraph = document.querySelectorAll("tr");
+    let text = document.createTextNode("ciao");
+     paragraph.appendChild(text);
+     return paragraph
+    }
+    console.log('Es22', textTable())
+    
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
@@ -423,10 +440,22 @@ console.log('Es20',myFunction());
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+const newElement = function (content) {
+    const ul = document.getElementById('myList')
+    const li = document.createElement('li')
+    li.innerText = content
+    ul.appendChild(li)  
+}
+console.log('Es24','ciao')
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+const hideFirstUl = () =>{
+    const ul = document.getElementById('myList')
+    ul.remove()
+    return ul
+  }
+  console.log('Es25', hideFirstUl())
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
